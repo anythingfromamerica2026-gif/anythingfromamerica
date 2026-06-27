@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Contact Us — Get a Quote"
-  description="Contact AnythingFromAmerica.com to request a quote on any U.S. product. We respond within 24 hours. Dallas, Texas. info@anythingfromamerica.com | +1-817-715-1156"
+  description="Contact AnythingFromAmerica.com to request a quote on any U.S. product. We respond within 24 hours. Dallas, Texas. anythingfromamerica2026@gmail.com | +1-817-715-1156"
 >
 
 <section class="contact-hero">
@@ -18,12 +18,10 @@ import Layout from '../layouts/Layout.astro';
 <section class="section">
   <div class="container contact-grid">
 
-    <!-- ===== FORM ===== -->
     <div class="form-wrap">
       <h2 class="form-title">Request a quote</h2>
       <p class="form-note">All fields marked * are required. We'll reply to your email within 24 hours.</p>
 
-      <!-- Replace mqevbadv with your Formspree form ID -->
       <form action="https://formspree.io/f/mqevbadv" method="POST" class="contact-form" id="contact-form">
 
         <div class="field-row">
@@ -80,15 +78,15 @@ import Layout from '../layouts/Layout.astro';
           <label>Interested in financing? (Buy Now, Pay Later)</label>
           <div class="radio-group">
             <label class="radio-label">
-              <input type="radio" name="financing" value="yes" style="width:16px;height:16px;flex-shrink:0;margin:0;accent-color:var(--navy);" />
+              <input type="radio" name="financing" value="yes" class="radio-input" />
               <span>Yes, I'd like financing options</span>
             </label>
             <label class="radio-label">
-              <input type="radio" name="financing" value="no" style="width:16px;height:16px;flex-shrink:0;margin:0;accent-color:var(--navy);" />
+              <input type="radio" name="financing" value="no" class="radio-input" />
               <span>No, I'll pay in full</span>
             </label>
             <label class="radio-label">
-              <input type="radio" name="financing" value="maybe" style="width:16px;height:16px;flex-shrink:0;margin:0;accent-color:var(--navy);" />
+              <input type="radio" name="financing" value="maybe" class="radio-input" />
               <span>Tell me more</span>
             </label>
           </div>
@@ -99,7 +97,6 @@ import Layout from '../layouts/Layout.astro';
           <textarea id="message" name="message" rows="4" placeholder="Specifications, timeline, any other relevant details..."></textarea>
         </div>
 
-        <!-- Honeypot for spam protection -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
         <input type="hidden" name="_subject" value="New inquiry from AnythingFromAmerica.com" />
 
@@ -111,17 +108,16 @@ import Layout from '../layouts/Layout.astro';
           <strong>Message received!</strong> We'll reply to your email within 24 hours.
         </div>
         <div id="form-error" class="form-error" style="display:none">
-          Something went wrong. Please email us directly at <a href="mailto:info@anythingfromamerica.com">info@anythingfromamerica.com</a>
+          Something went wrong. Please email us directly at <a href="mailto:anythingfromamerica2026@gmail.com">anythingfromamerica2026@gmail.com</a>
         </div>
       </form>
     </div>
 
-    <!-- ===== CONTACT DETAILS ===== -->
     <aside class="contact-info">
       <div class="info-card">
         <div class="info-section">
           <div class="info-label">Email</div>
-          <a href="mailto:info@anythingfromamerica.com" class="info-value">info@anythingfromamerica.com</a>
+          <a href="mailto:anythingfromamerica2026@gmail.com" class="info-value">anythingfromamerica2026@gmail.com</a>
         </div>
         <div class="info-section">
           <div class="info-label">Phone / WhatsApp</div>
@@ -206,7 +202,9 @@ import Layout from '../layouts/Layout.astro';
   font-weight: 600;
   color: var(--navy);
 }
-.field input, .field select, .field textarea {
+.field input:not(.radio-input),
+.field select,
+.field textarea {
   padding: 11px 14px;
   border: 1.5px solid #D8D7D4;
   border-radius: var(--radius);
@@ -217,21 +215,42 @@ import Layout from '../layouts/Layout.astro';
   transition: border-color 0.15s;
   width: 100%;
 }
-.field input:focus, .field select:focus, .field textarea:focus {
+.field input:not(.radio-input):focus,
+.field select:focus,
+.field textarea:focus {
   outline: none;
   border-color: var(--navy);
 }
 .field textarea { resize: vertical; }
-.radio-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
 .radio-label {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 14px;
   color: var(--gray-dark);
   cursor: pointer;
+  padding: 0;
 }
+.radio-input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: var(--navy);
+  cursor: pointer;
+  border: none !important;
+  background: none !important;
+}
+
 .submit-btn { margin-top: 0.5rem; justify-content: center; padding: 15px; font-size: 15px; }
 .form-success {
   padding: 14px 16px;
@@ -275,9 +294,8 @@ import Layout from '../layouts/Layout.astro';
 }
 .info-card--navy .info-label { color: rgba(255,255,255,0.4); }
 .info-value { font-size: 15px; color: var(--navy); font-weight: 500; }
-.info-value a, a.info-value { color: var(--red); }
-.info-value a:hover { text-decoration: underline; }
-
+a.info-value { color: var(--red); }
+a.info-value:hover { text-decoration: underline; }
 .info-badge {
   display: inline-block;
   padding: 4px 10px;
@@ -300,7 +318,6 @@ import Layout from '../layouts/Layout.astro';
   position: relative;
 }
 .info-card--navy li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-size: 11px; top: 2px; }
-
 .info-faq {
   background: var(--off-white);
   border-radius: var(--radius-lg);
@@ -329,30 +346,27 @@ form?.addEventListener('submit', async (e) => {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
-    const data = new FormData(form);
     const res = await fetch(form.action, {
       method: 'POST',
-      body: data,
+      body: new FormData(form),
       headers: { Accept: 'application/json' }
     });
     const json = await res.json();
-    console.log('Formspree response:', res.status, json);
     if (res.ok) {
       form.reset();
       if (success) success.style.display = 'block';
       if (errorDiv) errorDiv.style.display = 'none';
     } else {
-      console.error('Formspree error:', json);
       if (errorDiv) {
         errorDiv.style.display = 'block';
-        errorDiv.innerHTML = 'Error: ' + (json?.error || json?.errors?.map((e: any) => e.message).join(', ') || res.status);
+        const msg = json?.errors?.map((e: any) => e.message).join(', ') || json?.error || String(res.status);
+        errorDiv.innerHTML = 'Error: ' + msg + '. Please email <a href="mailto:anythingfromamerica2026@gmail.com">anythingfromamerica2026@gmail.com</a>';
       }
     }
   } catch(err) {
-    console.error('Fetch error:', err);
     if (errorDiv) {
       errorDiv.style.display = 'block';
-      errorDiv.innerHTML = 'Network error: ' + err;
+      errorDiv.innerHTML = 'Could not send. Please email <a href="mailto:anythingfromamerica2026@gmail.com">anythingfromamerica2026@gmail.com</a>';
     }
   } finally {
     btn.textContent = 'Send my inquiry →';
