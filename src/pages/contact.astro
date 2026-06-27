@@ -321,7 +321,7 @@ import Layout from '../layouts/Layout.astro';
 <script>
 const form = document.getElementById('contact-form') as HTMLFormElement;
 const success = document.getElementById('form-success');
-const error = document.getElementById('form-error');
+const errorDiv = document.getElementById('form-error');
 
 form?.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -329,19 +329,31 @@ form?.addEventListener('submit', async (e) => {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
+    const data = new FormData(form);
     const res = await fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: data,
       headers: { Accept: 'application/json' }
     });
+    const json = await res.json();
+    console.log('Formspree response:', res.status, json);
     if (res.ok) {
       form.reset();
-      success && (success.style.display = 'block');
+      if (success) success.style.display = 'block';
+      if (errorDiv) errorDiv.style.display = 'none';
     } else {
-      error && (error.style.display = 'block');
+      console.error('Formspree error:', json);
+      if (errorDiv) {
+        errorDiv.style.display = 'block';
+        errorDiv.innerHTML = 'Error: ' + (json?.error || json?.errors?.map((e: any) => e.message).join(', ') || res.status);
+      }
     }
-  } catch {
-    error && (error.style.display = 'block');
+  } catch(err) {
+    console.error('Fetch error:', err);
+    if (errorDiv) {
+      errorDiv.style.display = 'block';
+      errorDiv.innerHTML = 'Network error: ' + err;
+    }
   } finally {
     btn.textContent = 'Send my inquiry →';
     btn.disabled = false;
