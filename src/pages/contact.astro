@@ -79,9 +79,18 @@ import Layout from '../layouts/Layout.astro';
         <div class="field">
           <label>Interested in financing? (Buy Now, Pay Later)</label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="financing" value="yes" /> Yes, I'd like financing options</label>
-            <label class="radio-label"><input type="radio" name="financing" value="no" /> No, I'll pay in full</label>
-            <label class="radio-label"><input type="radio" name="financing" value="maybe" /> Tell me more</label>
+            <label class="radio-label">
+              <input type="radio" name="financing" value="yes" style="width:16px;height:16px;flex-shrink:0;margin:0;accent-color:var(--navy);" />
+              <span>Yes, I'd like financing options</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="financing" value="no" style="width:16px;height:16px;flex-shrink:0;margin:0;accent-color:var(--navy);" />
+              <span>No, I'll pay in full</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="financing" value="maybe" style="width:16px;height:16px;flex-shrink:0;margin:0;accent-color:var(--navy);" />
+              <span>Tell me more</span>
+            </label>
           </div>
         </div>
 
@@ -215,10 +224,8 @@ import Layout from '../layouts/Layout.astro';
 .field textarea { resize: vertical; }
 .radio-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
 .radio-label {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   font-size: 14px;
