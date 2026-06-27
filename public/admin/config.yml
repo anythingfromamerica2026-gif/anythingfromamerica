@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/anythingfromamerica  # ← change this
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home Page
+        file: src/content/home.json
+        fields:
+          - { label: Hero Title, name: hero_title, widget: string }
+          - { label: Hero Subtitle, name: hero_subtitle, widget: text }
+          - { label: Tagline, name: tagline, widget: string }
+
+      - name: settings
+        label: Site Settings
+        file: src/content/settings.json
+        fields:
+          - { label: Business Name, name: business_name, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Address, name: address, widget: string }
+          - { label: Formspree Form ID, name: formspree_id, widget: string, hint: "Get this from formspree.io after creating your form" }
+
+  - name: faqs
+    label: FAQs
+    folder: src/content/faqs
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Question, name: question, widget: string }
+      - { label: Answer, name: answer, widget: text }
+      - label: Category
+        name: category
+        widget: select
+        options: ["Getting Started", "Products & Sourcing", "Shipping & Logistics", "Payment & Financing"]
+
+  - name: team
+    label: Team Members
+    folder: src/content/team
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Title, name: title, widget: string }
+      - { label: Bio, name: bio, widget: text }
+      - { label: Photo, name: photo, widget: image, required: false }
+      - { label: Email, name: email, widget: string, required: false }
+      - { label: LinkedIn, name: linkedin, widget: string, required: false }
+
+  - name: services
+    label: Services
+    folder: src/content/services
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Short Description, name: short_desc, widget: text }
+      - { label: Full Description, name: body, widget: markdown }
+      - { label: Icon (emoji), name: icon, widget: string }
+      - { label: Financing Available, name: financing, widget: boolean, default: false }
