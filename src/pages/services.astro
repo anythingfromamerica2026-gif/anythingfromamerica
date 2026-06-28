@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: "aviation",
+    icon: "✈️",
+    title: "Aviation & Aircraft",
+    subtitle: "Private jets, helicopters, commercial aircraft & parts",
+    description: "We specialize in sourcing and exporting all categories of American-made aviation assets. From single-engine trainers to large commercial jets, our network of U.S. dealers, brokers, and manufacturers gives you access to the widest inventory at competitive prices.",
+    features: ["Private jets & business aircraft", "Commercial airliners", "Helicopters & rotorcraft", "Drones & UAVs", "Aircraft engines & parts", "Avionics & instruments"],
+    financing: true,
+    brands: ["Cessna", "Gulfstream", "Bombardier", "Bell", "Sikorsky", "Boeing", "Piper", "Beechcraft"]
+  },
+  {
+    id: "industrial",
+    icon: "⚙️",
+    title: "Industrial Equipment",
+    subtitle: "Heavy machinery, manufacturing & construction equipment",
+    description: "American industrial equipment is renowned worldwide for its durability and precision engineering. We source directly from U.S. manufacturers and authorized dealers, ensuring you receive genuine products with full documentation.",
+    features: ["Construction machinery", "Manufacturing equipment", "Mining & drilling equipment", "Agricultural machinery", "Power generation systems", "Industrial tools & parts"],
+    financing: true,
+    brands: ["Caterpillar", "John Deere", "Komatsu", "Case", "Bobcat", "Terex"]
+  },
+  {
+    id: "medical",
+    icon: "🏥",
+    title: "Medical Equipment",
+    subtitle: "Hospital equipment, devices & healthcare supplies",
+    description: "Access the world's most advanced medical technology from the USA. We work with certified U.S. medical equipment suppliers to source FDA-approved devices and hospital equipment for healthcare facilities worldwide.",
+    features: ["Diagnostic imaging systems", "Surgical equipment", "Patient monitoring systems", "Laboratory equipment", "Rehabilitation equipment", "Hospital furniture & supplies"],
+    financing: false,
+    brands: ["GE Healthcare", "Philips", "Medtronic", "Stryker", "Zimmer Biomet"]
+  },
+  {
+    id: "automotive",
+    icon: "🚗",
+    title: "Automotive",
+    subtitle: "Vehicles, parts & accessories from U.S. dealers",
+    description: "From pickup trucks to luxury sedans, we export American vehicles and automotive parts to buyers worldwide. We handle all export documentation, de-registration, and shipping logistics.",
+    features: ["Passenger vehicles & SUVs", "Commercial trucks & vans", "Heavy-duty pickup trucks", "OEM & aftermarket parts", "Tires & wheels", "Automotive accessories"],
+    financing: false,
+    brands: ["Ford", "Chevrolet", "RAM", "GMC", "Jeep", "Cadillac", "Tesla"]
+  },
+  {
+    id: "consumer",
+    icon: "📦",
+    title: "Consumer Electronics & Goods",
+    subtitle: "Electronics, appliances & branded retail products",
+    description: "Access authentic American consumer goods at competitive prices. We source directly from authorized U.S. retailers and distributors, ensuring genuine products with valid warranties.",
+    features: ["Electronics & gadgets", "Home appliances", "Branded fashion & accessories", "Sports equipment", "Health & beauty products", "Food & supplements"],
+    financing: false,
+    brands: ["Apple", "Samsung", "Sony", "LG", "Whirlpool", "Weber", "Vitamix"]
+  },
+  {
+    id: "defense",
+    icon: "🛡️",
+    title: "Defense & Security",
+    subtitle: "Law enforcement & security equipment (licensed exports only)",
+    description: "We facilitate the legal export of non-lethal security and law enforcement equipment to qualified government agencies and authorized organizations worldwide, in full compliance with U.S. export regulations.",
+    features: ["Body armor & protective gear", "Surveillance systems", "Communication equipment", "Training simulators", "Vehicle armor solutions", "Emergency response equipment"],
+    financing: false,
+    brands: ["Motorola", "Harris", "L3Harris", "Point Blank", "Safariland"]
+  }
+];
+---
+
+<Layout
+  title="Our Services — What We Export"
+  description="AnythingFromAmerica.com exports aviation, industrial equipment, medical devices, automotive, consumer goods and more from the USA to 60+ countries worldwide."
+>
+
+<section class="services-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold)">What We Export</div>
+    <h1 class="section-title light">We ship anything<br>American-made</h1>
+    <p class="section-body light">From private jets to consumer electronics — if it's made or sold in the USA, we can source it, ship it, and finance it for buyers in 60+ countries.</p>
+  </div>
+</section>
+
+<!-- Services list -->
+<section class="section">
+  <div class="container">
+    {services.map((s, i) => (
+      <div id={s.id} class={`service-block ${i % 2 === 1 ? 'service-block--alt' : ''}`}>
+        <div class="service-content">
+          <div class="service-icon-wrap">
+            <span class="service-big-icon">{s.icon}</span>
+            {s.financing && <span class="financing-badge">BNPL Available</span>}
+          </div>
+          <h2 class="service-title">{s.title}</h2>
+          <p class="service-subtitle">{s.subtitle}</p>
+          <p class="service-desc">{s.description}</p>
+          <ul class="service-features">
+            {s.features.map(f => <li>{f}</li>)}
+          </ul>
+          <div class="service-brands">
+            <span class="brands-label">Brands we work with:</span>
+            <div class="brands-list">
+              {s.brands.map(b => <span class="brand-pill">{b}</span>)}
+            </div>
+          </div>
+          <a href="/contact" class="btn btn-primary" style="margin-top:1.5rem">Request a quote →</a>
+        </div>
+        <div class="service-visual">
+          <div class="service-card-stat">
+            <div class="stat-icon">{s.icon}</div>
+            <div class="stat-title">{s.title}</div>
+            <div class="stat-line"></div>
+            {s.financing && (
+              <div class="stat-bnpl">
+                <strong>Buy Now, Pay Later</strong>
+                <span>Financing available for orders over $50,000</span>
+              </div>
+            )}
+            <div class="stat-cta">
+              <a href="/contact" class="btn btn-primary" style="width:100%;justify-content:center;font-size:13px;padding:12px">Get a quote</a>
+              <a href="mailto:anythingfromamerica2026@gmail.com" class="btn btn-navy" style="width:100%;justify-content:center;font-size:13px;padding:12px;margin-top:8px">Email us directly</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Don't see what you need?</h2>
+      <p>If it exists in America, we can probably get it. Tell us what you're looking for.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary">Request anything →</a>
+      <a href="/faq" class="btn btn-outline">Read the FAQ</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.services-hero {
+  background: var(--navy);
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  border-bottom: 3px solid var(--red);
+}
+.service-block {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
+  align-items: start;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+.service-block--alt {
+  grid-template-columns: 320px 1fr;
+}
+.service-block--alt .service-content { order: 2; }
+.service-block--alt .service-visual { order: 1; }
+
+.service-icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+.service-big-icon { font-size: 2.5rem; }
+.financing-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+.service-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.service-subtitle {
+  font-size: 15px;
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.service-desc {
+  font-size: 15px;
+  color: var(--gray-dark);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.service-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.service-features li {
+  font-size: 14px;
+  color: var(--gray-dark);
+  padding-left: 1.25rem;
+  position: relative;
+}
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 700;
+  font-size: 12px;
+}
+.service-brands { margin-top: 0.5rem; }
+.brands-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  display: block;
+  margin-bottom: 8px;
+}
+.brands-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.brand-pill {
+  padding: 4px 10px;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  border-radius: 99px;
+  font-size: 12px;
+  color: var(--navy);
+  font-weight: 500;
+}
+.service-card-stat {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: sticky;
+  top: 88px;
+}
+.stat-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+.stat-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.stat-line {
+  height: 2px;
+  background: var(--red);
+  margin-bottom: 1.25rem;
+}
+.stat-bnpl {
+  background: rgba(212,160,23,0.15);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 1.25rem;
+}
+.stat-bnpl strong {
+  display: block;
+  color: var(--gold);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.stat-bnpl span { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+.stat-cta { display: flex; flex-direction: column; }
+
+.cta-banner { background: var(--red); padding: 3.5rem 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-inner h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--white); margin-bottom: 0.25rem; }
+.cta-inner p { color: rgba(255,255,255,0.8); font-size: 15px; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .service-block, .service-block--alt {
+    grid-template-columns: 1fr;
+  }
+  .service-block--alt .service-content { order: 1; }
+  .service-block--alt .service-visual { order: 2; }
+  .service-features { grid-template-columns: 1fr; }
+  .service-card-stat { position: static; }
+}
+</style>

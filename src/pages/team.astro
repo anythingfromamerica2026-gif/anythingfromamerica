@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const team = [
+
+  {
+    name: "Operations Team",
+    title: "Logistics & Export Compliance",
+    bio: "Our operations specialists manage the end-to-end logistics of every shipment — from sourcing verification and export documentation to customs clearance coordination and freight booking. Every transaction is handled with precision and full regulatory compliance.",
+    expertise: ["Export Documentation", "Freight & Logistics", "Customs Coordination", "Quality Verification"],
+    email: "anythingfromamerica2026@gmail.com",
+    phone: "+1 (817) 715-1156",
+    initials: "OT"
+  },
+  {
+    name: "Sourcing Team",
+    title: "Product Sourcing & Procurement",
+    bio: "Our sourcing specialists maintain active relationships with hundreds of U.S. manufacturers, authorized dealers, and brokers across all product categories. When you submit an inquiry, our team gets to work immediately to find the best product at the best price.",
+    expertise: ["Supplier Relations", "Price Negotiation", "Product Verification", "Market Intelligence"],
+    email: "anythingfromamerica2026@gmail.com",
+    phone: "+1 (817) 715-1156",
+    initials: "ST"
+  }
+];
+
+const values = [
+  { icon: "🤝", title: "Trust", body: "Every transaction is backed by verified U.S. suppliers and transparent pricing. No hidden fees, no surprises." },
+  { icon: "⚡", title: "Speed", body: "We respond to every inquiry within 24 hours. Time is money, and we respect yours." },
+  { icon: "🌐", title: "Global Reach", body: "60+ countries served. We understand international shipping, customs, and compliance like no one else." },
+  { icon: "💡", title: "Expertise", body: "From aviation to consumer goods — our team brings deep product knowledge to every deal." }
+];
+---
+
+<Layout
+  title="Our Team — AnythingFromAmerica.com"
+  description="Meet the team behind AnythingFromAmerica.com — experienced U.S. export brokers based in Dallas, Texas serving buyers in 60+ countries."
+>
+
+<section class="team-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold)">The People Behind the Platform</div>
+    <h1 class="section-title light">Meet our team</h1>
+    <p class="section-body light">Based in Dallas, Texas — we're a dedicated team of export specialists, logistics coordinators, and sourcing experts with one mission: getting you the best American products at the best price.</p>
+  </div>
+</section>
+
+<!-- Team members -->
+<section class="section">
+  <div class="container">
+    <div class="team-grid">
+      {team.map(member => (
+        <div class="team-card">
+          <div class="member-avatar">
+            <span>{member.initials}</span>
+          </div>
+          <div class="member-info">
+            <h2 class="member-name">{member.name}</h2>
+            <div class="member-title">{member.title}</div>
+            <p class="member-bio">{member.bio}</p>
+            <div class="member-expertise">
+              <div class="expertise-label">Areas of expertise</div>
+              <div class="expertise-tags">
+                {member.expertise.map(e => <span class="tag">{e}</span>)}
+              </div>
+            </div>
+            <div class="member-contact">
+              <a href={`mailto:${member.email}`} class="contact-link">
+                <span>✉</span> {member.email}
+              </a>
+              <a href={`tel:${member.phone.replace(/\D/g,'')}`} class="contact-link">
+                <span>📞</span> {member.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Company values -->
+<section class="section values-section">
+  <div class="container">
+    <div class="section-label">What Drives Us</div>
+    <h2 class="section-title">Our values</h2>
+    <div class="values-grid">
+      {values.map(v => (
+        <div class="value-card">
+          <div class="value-icon">{v.icon}</div>
+          <h3>{v.title}</h3>
+          <p>{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="section location-section">
+  <div class="container location-grid">
+    <div class="location-text">
+      <div class="section-label">Where We Are</div>
+      <h2 class="section-title">Dallas, Texas<br>— Heart of America</h2>
+      <p class="section-body">Our Dallas base gives us direct access to one of the largest logistics hubs in the United States, with connections to every major U.S. port, freight carrier, and manufacturer.</p>
+      <div class="location-points">
+        <div class="loc-point">
+          <span class="loc-icon">📍</span>
+          <div>
+            <strong>Strategic Location</strong>
+            <p>Dallas/Fort Worth is the 4th largest metro in the U.S., home to major logistics hubs and freight networks.</p>
+          </div>
+        </div>
+        <div class="loc-point">
+          <span class="loc-icon">✈️</span>
+          <div>
+            <strong>DFW International Airport</strong>
+            <p>One of the world's busiest cargo airports — direct freight access to 60+ countries.</p>
+          </div>
+        </div>
+        <div class="loc-point">
+          <span class="loc-icon">🕐</span>
+          <div>
+            <strong>Business Hours (CST)</strong>
+            <p>Monday–Friday, 9am–6pm Central Standard Time. We respond within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+      <a href="/contact" class="btn btn-navy" style="margin-top:2rem">Contact our team →</a>
+    </div>
+    <div class="location-card">
+      <div class="loc-card-header">Dallas, Texas USA</div>
+      <div class="loc-card-map">
+        <div class="map-placeholder">
+          <div class="map-pin">📍</div>
+          <div class="map-label">Dallas, TX</div>
+          <div class="map-sublabel">AnythingFromAmerica.com HQ</div>
+        </div>
+      </div>
+      <div class="loc-card-details">
+        <div class="loc-detail">
+          <span class="loc-detail-label">Email</span>
+          <a href="mailto:anythingfromamerica2026@gmail.com">anythingfromamerica2026@gmail.com</a>
+        </div>
+        <div class="loc-detail">
+          <span class="loc-detail-label">Phone / WhatsApp</span>
+          <a href="tel:+18177151156">+1 (817) 715-1156</a>
+        </div>
+        <div class="loc-detail">
+          <span class="loc-detail-label">Response Time</span>
+          <span>Within 24 hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Want to work with us?</h2>
+      <p>Send us your inquiry and our team will respond within 24 hours.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary">Get in touch →</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.team-hero {
+  background: var(--navy);
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  border-bottom: 3px solid var(--red);
+}
+.team-grid { display: flex; flex-direction: column; gap: 2rem; }
+.team-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  transition: box-shadow 0.18s;
+}
+.team-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.member-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--red);
+  flex-shrink: 0;
+}
+.member-avatar span {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+}
+.member-name {
+  font-size: 1.75rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+.member-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+.member-bio { font-size: 15px; color: var(--gray-dark); line-height: 1.7; margin-bottom: 1.25rem; }
+.expertise-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 8px;
+}
+.expertise-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+.tag {
+  padding: 4px 12px;
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  border-radius: 99px;
+  font-size: 12px;
+  color: var(--navy);
+  font-weight: 500;
+}
+.member-contact { display: flex; flex-direction: column; gap: 6px; }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--red);
+}
+.contact-link:hover { text-decoration: underline; }
+
+.values-section { background: var(--navy); }
+.values-section .section-label { color: var(--gold); }
+.values-section .section-title { color: var(--white); margin-bottom: 2.5rem; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.value-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+.value-icon { font-size: 2rem; margin-bottom: 1rem; }
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.value-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+.location-points { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.loc-point { display: flex; gap: 1rem; align-items: flex-start; }
+.loc-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.loc-point strong { display: block; font-size: 15px; color: var(--navy); margin-bottom: 3px; }
+.loc-point p { font-size: 14px; color: var(--gray-dark); line-height: 1.55; }
+
+.location-card {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: sticky;
+  top: 88px;
+}
+.loc-card-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 14px 20px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.loc-card-map {
+  background: #E8EDF2;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--gray-light);
+}
+.map-placeholder { text-align: center; }
+.map-pin { font-size: 3rem; }
+.map-label { font-family: var(--font-display); font-size: 1.25rem; color: var(--navy); font-weight: 700; }
+.map-sublabel { font-size: 12px; color: var(--gray-mid); }
+.loc-card-details { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 12px; }
+.loc-detail { display: flex; flex-direction: column; gap: 2px; }
+.loc-detail-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-mid); }
+.loc-detail a, .loc-detail span { font-size: 14px; color: var(--navy); font-weight: 500; }
+.loc-detail a { color: var(--red); }
+.loc-detail a:hover { text-decoration: underline; }
+
+.cta-banner { background: var(--red); padding: 3.5rem 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-inner h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--white); margin-bottom: 0.25rem; }
+.cta-inner p { color: rgba(255,255,255,0.8); font-size: 15px; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .team-card { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .location-grid { grid-template-columns: 1fr; }
+  .location-card { position: static; }
+}
+@media (max-width: 580px) {
+  .values-grid { grid-template-columns: 1fr; }
+}
+</style>

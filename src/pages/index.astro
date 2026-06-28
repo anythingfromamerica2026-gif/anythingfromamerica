@@ -1,0 +1,689 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Your U.S. Import Partner"
+  description="AnythingFromAmerica.com — We source, ship, and finance any American product globally. Private jets to industrial parts. Dallas, Texas. Easy payment plans available."
+>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg-stripe"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Dallas, Texas · Serving 60+ Countries</div>
+      <h1 class="hero-title">
+        From <span class="accent-red">Micro</span><br>
+        to <span class="accent-gold">Mighty</span>
+      </h1>
+      <p class="hero-subtitle">
+        Your trusted partner for sourcing, shipping, and financing any American product — from industrial components to private jets.
+      </p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+        <a href="/services" class="btn btn-outline">See What We Ship</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>60+</strong><span>Countries served</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>Any</strong><span>Size order welcome</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>BNPL</strong><span>Flexible payment plans</span></div>
+      </div>
+    </div>
+    <div class="hero-flag">
+      <div class="flag-stripes">
+        <div class="stripe red"></div>
+        <div class="stripe white"></div>
+        <div class="stripe red"></div>
+        <div class="stripe white"></div>
+        <div class="stripe red"></div>
+        <div class="stripe white"></div>
+        <div class="stripe red"></div>
+      </div>
+      <div class="flag-canton">
+        <div class="stars-grid">
+          {Array(50).fill(0).map(() => <span class="star">★</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="container trust-inner">
+    <span class="trust-label">We ship</span>
+    {["Private Jets", "Helicopters", "Industrial Equipment", "Medical Devices", "Consumer Electronics", "Automotive Parts", "Agricultural Machinery"].map(item => (
+      <span class="trust-item">{item}</span>
+    ))}
+    <span class="trust-more">+ anything else from the USA</span>
+  </div>
+</div>
+
+<!-- ===== MISSION ===== -->
+<section class="section">
+  <div class="container mission-grid">
+    <div class="mission-text">
+      <div class="section-label">Our Global Mission</div>
+      <h2 class="section-title">America's products.<br>The world's buyers.</h2>
+      <p class="section-body">
+        We empower global businesses by facilitating the seamless export of all American goods — connecting U.S. innovation and manufacturing with buyers in 60+ countries. Whether you need one part or an entire aircraft, we handle sourcing, shipping, customs, and financing.
+      </p>
+      <div class="mission-points">
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div>
+            <strong>Any product, any size</strong>
+            <p>From a $50 component to a $50M aircraft — we handle it all.</p>
+          </div>
+        </div>
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div>
+            <strong>End-to-end service</strong>
+            <p>Sourcing, export docs, customs clearance, freight, and delivery.</p>
+          </div>
+        </div>
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div>
+            <strong>Easy payment plans</strong>
+            <p>Buy Now, Pay Later options available for qualified buyers.</p>
+          </div>
+        </div>
+      </div>
+      <a href="/why-usa" class="btn btn-navy" style="margin-top:2rem">Why buy from USA →</a>
+    </div>
+    <div class="mission-visual">
+      <div class="globe-card">
+        <div class="globe-label">Worldwide Reach</div>
+        <div class="globe-grid">
+          {[
+            "North America", "South America", "Europe",
+            "Middle East", "Africa", "Asia Pacific"
+          ].map(region => (
+            <div class="region-pill">{region}</div>
+          ))}
+        </div>
+        <div class="globe-cta">
+          <p>Not sure if we ship to your country?</p>
+          <a href="/contact" class="btn btn-primary" style="font-size:13px;padding:10px 20px">Ask us →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED SERVICES ===== -->
+<section class="section services-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">What We Export</div>
+        <h2 class="section-title">We ship anything<br>American-made</h2>
+      </div>
+      <a href="/services" class="btn btn-navy">All services →</a>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card service-card--hero">
+        <div class="service-tag">Buy Now · Pay Later</div>
+        <h3>Aviation</h3>
+        <p>Private jets, commercial aircraft, helicopters, drones, and parts — sourced from U.S. manufacturers and brokers.</p>
+        <a href="/services#aviation" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Industrial</h3>
+        <p>Heavy machinery, manufacturing equipment, and industrial parts.</p>
+        <a href="/services#industrial" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏥</div>
+        <h3>Medical</h3>
+        <p>Medical devices, hospital equipment, and healthcare supplies.</p>
+        <a href="/services#medical" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Automotive</h3>
+        <p>Vehicles, parts, and accessories from U.S. dealers and manufacturers.</p>
+        <a href="/services#automotive" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Consumer Goods</h3>
+        <p>Electronics, appliances, branded goods, and retail products.</p>
+        <a href="/services#consumer" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card service-card--cta">
+        <h3>Don't see your product?</h3>
+        <p>If it's made in America, we can probably get it. Tell us what you need.</p>
+        <a href="/contact" class="btn btn-primary" style="margin-top:1rem">Request a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINANCING HIGHLIGHT ===== -->
+<section class="section financing-section">
+  <div class="container">
+    <div class="financing-inner">
+      <div class="financing-text">
+        <div class="section-label" style="color:var(--gold)">Flexible Financing</div>
+        <h2 class="section-title light">Buy Now.<br>Pay Later.</h2>
+        <p class="section-body light">
+          Large purchases shouldn't require large upfront payments. We offer flexible payment plans for qualified buyers worldwide — making American goods accessible regardless of capital constraints.
+        </p>
+        <div class="financing-items">
+          <div class="fi">Private jets & aircraft</div>
+          <div class="fi">Helicopters & rotorcraft</div>
+          <div class="fi">Industrial machinery</div>
+          <div class="fi">Medical equipment</div>
+        </div>
+        <a href="/contact" class="btn btn-outline" style="margin-top:2rem">Inquire about financing →</a>
+      </div>
+      <div class="financing-card">
+        <div class="fc-label">Typical financing terms</div>
+        <div class="fc-row"><span>Down payment</span><strong>20–30%</strong></div>
+        <div class="fc-row"><span>Payment period</span><strong>12–60 months</strong></div>
+        <div class="fc-row"><span>Minimum order</span><strong>$50,000</strong></div>
+        <div class="fc-row"><span>Countries eligible</span><strong>60+</strong></div>
+        <div class="fc-note">Terms vary by product and buyer profile. Contact us for a personalized quote.</div>
+        <a href="/contact" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.25rem">Get your terms →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-body" style="margin:0 auto">From your first inquiry to delivery at your door — here's exactly what to expect.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Submit an inquiry</h3>
+        <p>Tell us what you need via our contact form or email. Include product details, quantity, destination country, and budget.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Receive a quote</h3>
+        <p>We source the product, calculate shipping and duties, and send you a detailed quote within 48 hours.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Agree & pay</h3>
+        <p>Confirm the order and choose your payment method — full payment or an approved Buy Now, Pay Later plan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>We handle everything</h3>
+        <p>Sourcing, export documentation, customs clearance, freight booking — we manage the entire process end to end.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h3>Delivery & support</h3>
+        <p>Your goods arrive at your specified location. We're available post-delivery for any follow-up needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Ready to buy from America?</h2>
+      <p>Contact us today — we respond within 24 hours.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+      <a href="mailto:info@anythingfromamerica.com" class="btn btn-outline">Email us directly</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+/* ----- Hero ----- */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 8vw, 6rem) 0;
+}
+.hero-bg-stripe {
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 40%;
+  background: var(--navy-mid);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.hero-title {
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+.accent-red { color: var(--red); }
+.accent-gold { color: var(--gold); }
+
+.hero-subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+  margin-bottom: 2rem;
+  line-height: 1.65;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.stat span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Flag graphic */
+.hero-flag {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
+.flag-stripes {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  height: 100%;
+}
+.stripe.red { background: var(--red); }
+.stripe.white { background: var(--white); }
+.flag-canton {
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%;
+  height: 57%;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stars-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1px;
+  padding: 4px;
+}
+.star { font-size: 5px; color: var(--white); line-height: 1; }
+
+/* ----- Trust bar ----- */
+.trust-bar {
+  background: var(--gray-light);
+  border-top: 3px solid var(--red);
+  border-bottom: 1px solid #DDD;
+  padding: 14px 0;
+  overflow: hidden;
+}
+.trust-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.trust-inner::-webkit-scrollbar { display: none; }
+.trust-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-right: 1.25rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.trust-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-dark);
+  padding: 0 1.25rem;
+  border-left: 1px solid #CCC;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.trust-more {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 0 1.25rem;
+  border-left: 1px solid #CCC;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ----- Mission ----- */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+}
+.mission-points { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+.point {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.point-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.point strong { display: block; font-size: 15px; color: var(--navy); margin-bottom: 2px; }
+.point p { font-size: 14px; color: var(--gray-dark); }
+
+.globe-card {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  color: var(--white);
+}
+.globe-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.globe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.region-pill {
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  font-size: 13px;
+  text-align: center;
+}
+.globe-cta {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.globe-cta p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.4; }
+
+/* ----- Services ----- */
+.services-section { background: var(--off-white); }
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
+}
+.section-header.centered { flex-direction: column; align-items: center; text-align: center; margin-bottom: 3rem; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid #E4E3E0;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-2px); }
+.service-card--hero {
+  grid-column: 1 / -1;
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+.service-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.service-card--hero h3 { color: var(--white); font-size: 2rem; }
+.service-card--hero p { color: rgba(255,255,255,0.7); font-size: 15px; }
+.service-card--hero .service-link { color: var(--gold); }
+
+.service-icon { font-size: 2rem; margin-bottom: 1rem; }
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.service-card p { font-size: 14px; color: var(--gray-dark); line-height: 1.6; }
+.service-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
+}
+.service-link:hover { text-decoration: underline; }
+.service-card--cta {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.service-card--cta h3 { color: var(--white); font-size: 1.25rem; }
+.service-card--cta p { color: rgba(255,255,255,0.8); }
+
+/* ----- Financing ----- */
+.financing-section { background: var(--navy); }
+.financing-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: center;
+}
+.financing-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 2rem;
+}
+.fi {
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+.financing-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+.fc-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 1.25rem;
+}
+.fc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-light);
+  font-size: 14px;
+}
+.fc-row span { color: var(--gray-dark); }
+.fc-row strong { color: var(--navy); }
+.fc-note {
+  font-size: 12px;
+  color: var(--gray-mid);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* ----- Steps ----- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 14%;
+  right: 14%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--red), var(--navy));
+}
+.step { position: relative; }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  background: var(--red);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.step h3 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+.step p { font-size: 13px; color: var(--gray-dark); line-height: 1.6; }
+
+/* ----- CTA Banner ----- */
+.cta-banner {
+  background: var(--red);
+  padding: 3.5rem 0;
+}
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta-inner h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+.cta-inner p { color: rgba(255,255,255,0.8); font-size: 15px; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-flag { display: none; }
+  .mission-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service-card--hero { grid-template-columns: 1fr; gap: 1rem; }
+  .financing-inner { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid::before { display: none; }
+}
+@media (max-width: 580px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .cta-inner { flex-direction: column; align-items: flex-start; }
+  .globe-cta { flex-direction: column; align-items: flex-start; }
+  .hero-stats { gap: 1rem; }
+}
+</style>

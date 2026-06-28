@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    category: "Getting Started",
+    items: [
+      { q: "What exactly does AnythingFromAmerica.com do?", a: "We are a U.S. export broker. That means we source any American product on your behalf, handle all export documentation and customs paperwork, arrange international freight, and can offer financing. You tell us what you want — we make it happen." },
+      { q: "Do you have a minimum order size?", a: "No minimum for regular cash purchases. For Buy Now, Pay Later financing, the minimum order is $50,000 USD." },
+      { q: "How do I start?", a: "Simply fill out our contact form or email info@anythingfromamerica.com with the product name, quantity, and your destination country. We'll reply with a full quote within 24 hours." },
+      { q: "How quickly do you respond to inquiries?", a: "Within 24 hours on business days (Monday–Friday, US Central Time). For urgent requests, call or WhatsApp us at +1 (817) 715-1156." },
+    ]
+  },
+  {
+    category: "Products & Sourcing",
+    items: [
+      { q: "What products can you source?", a: "Virtually any legal American product — from small components to large aircraft. We regularly handle private jets, helicopters, industrial machinery, medical equipment, automotive parts, electronics, and consumer goods. If it's made or sold in the USA, we can likely source it." },
+      { q: "Can you source used or pre-owned products?", a: "Yes. We source both new and pre-owned/refurbished products. For used aviation assets and heavy equipment, we conduct thorough condition assessments before purchase." },
+      { q: "Do you work with specific brands?", a: "We work with all brands. We are not an authorized dealer for any specific manufacturer — we are a broker, which means we source from a wide network of dealers, manufacturers, and the secondary market." },
+      { q: "Can I buy aircraft or private jets through you?", a: "Yes. Aviation is one of our specialties. We source Cessna, Beechcraft, Piper, Gulfstream, Bombardier, Boeing, and many other aircraft. Financing is available for qualified buyers." },
+    ]
+  },
+  {
+    category: "Shipping & Logistics",
+    items: [
+      { q: "Which countries do you ship to?", a: "We ship to 60+ countries across North America, South America, Europe, the Middle East, Africa, and Asia Pacific. Contact us if you're unsure about your specific country." },
+      { q: "Who handles customs in my country?", a: "We handle the U.S. export paperwork. For import customs clearance in your country, we can recommend licensed import brokers in your region, or work with your existing customs agent." },
+      { q: "How long does shipping take?", a: "It depends on the product and destination. Small parcels: 5–15 business days. Large freight: 2–8 weeks. Aircraft and oversized cargo: timeline varies and is quoted per shipment." },
+      { q: "Do you provide shipping insurance?", a: "Yes, we arrange cargo insurance for all shipments. We strongly recommend it for high-value goods." },
+    ]
+  },
+  {
+    category: "Payment & Financing",
+    items: [
+      { q: "What payment methods do you accept?", a: "Wire transfer (T/T), Letter of Credit (L/C), and for approved buyers, our Buy Now Pay Later financing program." },
+      { q: "How does your Buy Now, Pay Later financing work?", a: "Qualified buyers pay 20–30% down, with the remainder spread over 12–60 monthly installments. Eligibility is assessed on a case-by-case basis. Contact us for a personalized financing quote." },
+      { q: "What is the minimum order for financing?", a: "Buy Now, Pay Later financing requires a minimum order value of $50,000 USD." },
+      { q: "Do you offer escrow services?", a: "For large transactions, we can arrange escrow through a mutually agreed third-party escrow service for additional buyer and seller protection." },
+    ]
+  }
+];
+---
+
+<Layout
+  title="FAQ — Frequently Asked Questions"
+  description="Answers to common questions about buying American goods through AnythingFromAmerica.com — shipping, financing, sourcing, and more."
+>
+
+<section class="faq-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold)">Everything you need to know</div>
+    <h1 class="section-title light">Frequently asked<br>questions</h1>
+    <p class="section-body light">Can't find your answer? <a href="/contact" style="color:var(--gold);text-decoration:underline">Contact us directly →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container faq-layout">
+    <nav class="faq-nav">
+      {faqs.map(cat => (
+        <a href={`#${cat.category.toLowerCase().replace(/\s+/g, '-')}`} class="faq-nav-link">{cat.category}</a>
+      ))}
+      <div class="faq-nav-cta">
+        <p>Still have questions?</p>
+        <a href="/contact" class="btn btn-primary" style="font-size:13px;padding:10px 18px">Ask us →</a>
+      </div>
+    </nav>
+
+    <div class="faq-body">
+      {faqs.map(cat => (
+        <div id={cat.category.toLowerCase().replace(/\s+/g, '-')} class="faq-category">
+          <h2 class="cat-title">{cat.category}</h2>
+          <div class="faq-list">
+            {cat.items.map(item => (
+              <details class="faq-item">
+                <summary>{item.q}</summary>
+                <div class="faq-answer">{item.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Ready to get started?</h2>
+      <p>Submit an inquiry and receive a full quote within 24 hours.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/contact" class="btn btn-primary">Request a Quote</a>
+      <a href="mailto:info@anythingfromamerica.com" class="btn btn-outline">Email us directly</a>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+.faq-hero {
+  background: var(--navy);
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  border-bottom: 3px solid var(--red);
+}
+.faq-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.faq-nav {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.faq-nav-link {
+  display: block;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-dark);
+  border-radius: var(--radius);
+  transition: background 0.15s, color 0.15s;
+  border-left: 2px solid transparent;
+}
+.faq-nav-link:hover { background: var(--off-white); color: var(--navy); border-left-color: var(--red); }
+.faq-nav-cta {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E4E3E0;
+}
+.faq-nav-cta p { font-size: 13px; color: var(--gray-mid); margin-bottom: 0.75rem; }
+
+.faq-category { margin-bottom: 3rem; }
+.cat-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--red);
+}
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  border-bottom: 1px solid #E4E3E0;
+}
+.faq-item summary {
+  padding: 1.1rem 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--red);
+  flex-shrink: 0;
+  font-weight: 300;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 0 1.25rem;
+  font-size: 15px;
+  color: var(--gray-dark);
+  line-height: 1.7;
+}
+
+.cta-banner { background: var(--red); padding: 3.5rem 0; }
+.cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-inner h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--white); margin-bottom: 0.25rem; }
+.cta-inner p { color: rgba(255,255,255,0.8); font-size: 15px; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-nav { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .faq-nav-cta { display: none; }
+}
+</style>
